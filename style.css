@@ -20,6 +20,7 @@ body {
 header {
     align-self: center;
     color: #FFF;
+    padding-top: 10px;
 }
 
 #buttons {
@@ -32,7 +33,7 @@ header {
     font-family: Arial, sans-serif;
 }
 
-.button {
+button {
     flex: 1;
     background-color: #222;
     border: none;
@@ -45,11 +46,19 @@ header {
     transition: background-color 0.3s ease;
 }
 
-.button:hover {
+button:hover {
     background-color: #555;
 }
 
-.button:not(:last-child) {
+#rand_photo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/* button:not(:last-child) {
     margin-bottom: -10px;
     box-shadow: 0 -10px 0 #111;
-}
+} */
