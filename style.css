@@ -33,7 +33,7 @@ header {
     font-family: Arial, sans-serif;
 }
 
-button {
+.button {
     flex: 1;
     background-color: #222;
     border: none;
@@ -46,7 +46,7 @@ button {
     transition: background-color 0.3s ease;
 }
 
-button:hover {
+.button:hover {
     background-color: #555;
 }
 
@@ -56,6 +56,10 @@ button:hover {
     justify-content: center;
     padding-top: 10px;
     padding-bottom: 10px;
+}
+
+#pokemonSprite {
+    height: 100px;
 }
 
 /* button:not(:last-child) {
