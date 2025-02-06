@@ -33,6 +33,11 @@ header {
     font-family: Arial, sans-serif;
 }
 
+a {
+    width: 100%;
+    height: 100%;
+}
+
 .button {
     flex: 1;
     background-color: #222;
@@ -52,6 +57,7 @@ header {
 
 #rand_photo {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     padding-top: 10px;
@@ -59,7 +65,7 @@ header {
 }
 
 #pokemonSprite {
-    height: 100px;
+    height: 200px;
 }
 
 /* button:not(:last-child) {
