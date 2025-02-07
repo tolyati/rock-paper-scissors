@@ -20,9 +20,12 @@ async function fetchData(){
         const imageBlob = await response.blob(); 
         const imageUrl = URL.createObjectURL(imageBlob); 
 
-        const imgElement = document.getElementById("pokemonSprite");
+        const imgElement = document.getElementById("randphoto");
         imgElement.src = imageUrl;
         imgElement.style.display = "block";
+        imgElement.addEventListener('load', () => {
+            container.innerHTML += '<button>New paragraph</button>';
+          });
 
     } catch (error) {
         console.error(error);
