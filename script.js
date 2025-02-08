@@ -13,5 +13,5 @@ function moveText() {
 setInterval(moveText, 20); 
 
 function start() {
-   window.open("./pages/Game itself/Game.html", "_blank");
+   window.open("./pages/Gameitself/Game.html", "_blank");
 }
