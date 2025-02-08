@@ -5,26 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock-paper-scissors</title>
     <link rel="stylesheet" href="./style.css">
-    <script src="./script.js"></script>
 </head>
 <body>
-    <header><h1>CHOOSE YOUR WEAPON</h1></header>
-
+    <video autoplay loop muted playsinline id="bg-video">
+        <source src="./media/video/bg.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <header id="moving-text"><h1>Welcome!</h1></header>
     <main>
-        <section id="buttons">
-            <button onclick="redirectToPage()" class="button" id="Rock">Rock</button>
-            <button onclick="redirectToPage()" class="button" id="Paper">Paper</button>
-            <button onclick="redirectToPage()" class="button" id="Scissors">Scissors</button> 
+        <section class="button-container">
+            <button onclick="start()">Start</button>
+            <button>Settings</button>
+            <button class="quit">Quit</button>
         </section>
-        <!-- <section id="rand_photo"> -->
-            <!-- <input id="pokemonName" type="text" placeholder="Input something" /> -->
-            <!-- <button onclick="fetchData()">Here you go</button> -->
-            
-        <!-- </section> -->
-        
     </main>
     <footer>
 
     </footer>
+    <script src="./script.js"></script>
 </body>
 </html>

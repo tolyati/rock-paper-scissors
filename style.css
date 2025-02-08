@@ -1,74 +1,62 @@
-/* body {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-} */
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    background-color: #222;
-    display: flex;
-    flex-direction: column;
-}
-
 header {
-    align-self: center;
-    color: #FFF;
-    padding-top: 10px;
-}
-
-#buttons {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    height: 100vh;
-    background-color: #111;
-    overflow: hidden;
-    font-family: Arial, sans-serif;
-}
-
-a {
-    width: 100%;
-    height: 100%;
-}
-
-.button {
-    flex: 1;
-    background-color: #222;
-    border: none;
-    outline: none;
-    color: white;
-    font-size: 2rem;
-    text-transform: uppercase;
-    cursor: pointer;
+    font-size: xx-large;
+    margin-bottom: 75px;
+    color: rgba(45, 45, 64, 0.5);
     position: relative;
-    transition: background-color 0.3s ease;
 }
 
-.button:hover {
-    background-color: #555;
+#bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
 }
 
-#rand_photo {
+body {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    overflow-x: hidden;
+    /* background-image: url('./media/video/bg.mp4');
+    background-size: cover; */
+}
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+button {
+    width: 150px;
+    padding: 10px;
+    font-size: 18px;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    background: rgba(255, 255, 255, 0.2);
 }
 
-#pokemonSprite {
-    height: 200px;
+.quit {
+     background: red; 
+     color: white;
+}
+.quit:hover {
+    background: rgba(254, 97, 97, 0.4);
 }
 
-/* button:not(:last-child) {
-    margin-bottom: -10px;
-    box-shadow: 0 -10px 0 #111;
-} */
+button:hover {
+     /* opacity: 0.8; */
+     background: rgba(255, 255, 255, 0.4);
+}
