@@ -13,12 +13,11 @@ body {
 header {
     align-self: center;
     color: #FFF;
-    padding-top: 10px;
+    padding: 10px 0;
 }
 
 #buttons {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     height: 100vh;
     background-color: #111;
@@ -61,3 +60,10 @@ a {
     height: 200px;
 }
 
+
+@media (max-width: 426px) {
+    #buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+}

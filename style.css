@@ -37,6 +37,7 @@ body {
     flex-direction: column;
     gap: 15px;
 }
+
 button {
     width: 150px;
     padding: 10px;
