@@ -32,13 +32,13 @@ body {
     /* background-image: url('./media/video/bg.mp4');
     background-size: cover; */
 }
-.button-container {
+.button-start-container {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
-button {
+.button-start {
     width: 150px;
     padding: 10px;
     font-size: 18px;
