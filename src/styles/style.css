@@ -4,18 +4,50 @@
     box-sizing: border-box;
 }
 
-header {
+#moving-text {
     font-size: xx-large;
     margin-bottom: 75px;
     color: rgba(45, 45, 64, 0.5);
     position: relative;
 }
 
-#bg-video {
+.text {
     position: absolute;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    white-space: nowrap;
+    cursor: pointer;
+    animation: moveRight 5s linear infinite;
+}
+
+@keyframes moveRight {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(100vw);
+    }
+}
+
+.text:active {
+    animation-name: moveLeft;
+}
+
+@keyframes moveLeft {
+    from {
+        transform: translateX(100vw);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+#bg-video {
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vmax;
     height: 100vh;
     object-fit: cover;
     z-index: -1;
