@@ -18,33 +18,10 @@
     color: white;
     white-space: nowrap;
     cursor: pointer;
-    animation: moveRight 5s linear infinite;
-}
-
-@keyframes moveRight {
-    from {
-        transform: translateX(-100%);
-    }
-    to {
-        transform: translateX(100vw);
-    }
-}
-
-.text:active {
-    animation-name: moveLeft;
-}
-
-@keyframes moveLeft {
-    from {
-        transform: translateX(100vw);
-    }
-    to {
-        transform: translateX(-100%);
-    }
 }
 
 #bg-video {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100vmax;
@@ -53,7 +30,7 @@
     z-index: -1;
 }
 
-body {
+#index-body {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -85,11 +62,13 @@ body {
      background: red; 
      color: white;
 }
-.quit:hover {
-    background: rgba(254, 97, 97, 0.4);
-}
 
-button:hover {
+
+.button-start:hover {
      /* opacity: 0.8; */
      background: rgba(255, 255, 255, 0.4);
+}
+
+.quit:hover {
+    background: rgba(254, 97, 97, 0.4);
 }

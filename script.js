@@ -16,6 +16,11 @@ window.onresize = () => {
   console.log(window.innerWidth);
 }
 
+window.addEventListener("resize", () => {
+    let video = document.getElementById("bg-video");
+    video.style.width = window.innerWidth + "px";
+    video.style.height = window.innerHeight + "px";
+});
 
 
 const movingText = document.getElementById('moving-text');
