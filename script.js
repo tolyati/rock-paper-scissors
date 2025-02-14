@@ -31,11 +31,11 @@ const speed = 2;
 function moveText() {
   position += speed * direction;
             
-  if (position > window.innerWidth - 550) {
-    position = -movingText.offsetWidth - 600; // Выход слева после правого края
+  if (position > window.innerWidth) {
+    position = -movingText.offsetWidth; // Выход слева после правого края
   }
-  if (position < -movingText.offsetWidth + 600) {
-    position = window.innerWidth - 600; // Выход справа после левого края
+  if (position < -movingText.offsetWidth) {
+    position = window.innerWidth; // Выход справа после левого края
   }
 
   movingText.style.left = position + 'px';
@@ -56,3 +56,37 @@ function start() {
    window.open("./pages/Gameitself/Game.html", "_blank");
 }
 
+async function fetchData(){
+
+  const category = 'wildlife';
+  const apiKey = '9KsCzEYpSGRbIE3mDOu7zA==DLn1SzRPV0RqeykG';
+  const url = `https://api.api-ninjas.com/v1/randomimage?category=${category}`;
+
+  try {
+      const response = await fetch(url, {
+          method: 'GET',
+          headers: {
+              'X-Api-Key': apiKey,
+              'Accept': 'image/jpg'
+          }
+      });
+
+      if (!response.ok) {
+          throw new Error(`Error: ${response.statusText}`);
+      }
+
+      const imageBlob = await response.blob(); 
+      const imageUrl = URL.createObjectURL(imageBlob); 
+
+      const imgElement = document.getElementById("randphoto");
+      imgElement.src = imageUrl;
+      imgElement.style.display = "block";
+      // imgElement.addEventListener('load', () => {
+      //     container.innerHTML += '<button>New paragraph</button>';
+      //   });
+
+  } catch (error) {
+      console.error(error);
+  }
+
+}

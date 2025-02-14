@@ -4,20 +4,13 @@
     box-sizing: border-box;
 }
 
+/* Main Page*/
+
 #moving-text {
     font-size: xx-large;
     margin-bottom: 75px;
     color: rgba(45, 45, 64, 0.5);
     position: relative;
-}
-
-.text {
-    position: absolute;
-    font-size: 24px;
-    font-weight: bold;
-    color: white;
-    white-space: nowrap;
-    cursor: pointer;
 }
 
 #bg-video {
@@ -30,7 +23,7 @@
     z-index: -1;
 }
 
-#index-body {
+#start-body {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -38,8 +31,6 @@
     height: 100vh;
     background-color: #f4f4f4;
     overflow-x: hidden;
-    /* background-image: url('./media/video/bg.mp4');
-    background-size: cover; */
 }
 .button-start-container {
     display: flex;
@@ -56,6 +47,8 @@
     cursor: pointer;
     transition: background 0.3s;
     background: rgba(255, 255, 255, 0.2);
+    text-decoration: none;
+    color: black;
 }
 
 .quit {
@@ -65,10 +58,62 @@
 
 
 .button-start:hover {
-     /* opacity: 0.8; */
      background: rgba(255, 255, 255, 0.4);
 }
 
 .quit:hover {
     background: rgba(254, 97, 97, 0.4);
+}
+
+/* Game Page*/
+
+#body-game {
+    background-color: #222;
+    display: flex;
+    flex-direction: column;
+}
+
+#header-game {
+    align-self: center;
+    color: #FFF;
+    padding: 10px 0;
+}
+
+#button-game-container{
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
+    background-color: #111;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+.button-game {
+    flex: 1;
+    background-color: #222;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 2rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.button-game:hover {
+    background-color: #555;
+}
+
+@media (max-width: 426px) {
+    #buttons-game {
+        flex-direction: column;
+        gap: 12px;
+    }
+}
+
+/* Rest (random photo) Page*/
+
+#rest-button {
+    margin-top: 10px;
 }

@@ -23,9 +23,9 @@ async function fetchData(){
         const imgElement = document.getElementById("randphoto");
         imgElement.src = imageUrl;
         imgElement.style.display = "block";
-        imgElement.addEventListener('load', () => {
-            container.innerHTML += '<button>New paragraph</button>';
-          });
+        // imgElement.addEventListener('load', () => {
+        //     container.innerHTML += '<button>New paragraph</button>';
+        //   });
 
     } catch (error) {
         console.error(error);
