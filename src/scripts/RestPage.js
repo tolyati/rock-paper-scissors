@@ -1,3 +1,5 @@
+const imgElement = document.getElementById("randphoto");
+
 async function fetchData(){
 
     const category = 'wildlife';
@@ -20,7 +22,7 @@ async function fetchData(){
         const imageBlob = await response.blob(); 
         const imageUrl = URL.createObjectURL(imageBlob); 
 
-        const imgElement = document.getElementById("randphoto");
+        
         imgElement.src = imageUrl;
         imgElement.style.display = "block";
         // imgElement.addEventListener('load', () => {
@@ -32,4 +34,13 @@ async function fetchData(){
     }
 
 }
-fetchData();
+
+const button = document.getElementById('rest-button');
+
+button.addEventListener("click", () => {
+    let isLoaded = imgElement.complete;
+
+    if(isLoaded){
+        fetchData();
+    }
+})

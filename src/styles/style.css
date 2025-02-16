@@ -8,18 +8,19 @@
 
 #moving-text {
     font-size: xx-large;
-    margin-bottom: 75px;
+    top: 20%;
     color: rgba(45, 45, 64, 0.5);
-    position: relative;
+    position: absolute;
+    white-space: nowrap;
 }
 
 #bg-video {
-    position: absolute;
+    position: fixed; 
     top: 0;
     left: 0;
-    width: 100vmax;
-    height: 100vh;
-    object-fit: cover;
+    width: 100vw; 
+    height: 100vh; 
+    object-fit: cover; 
     z-index: -1;
 }
 
@@ -30,11 +31,18 @@
     align-items: center;
     height: 100vh;
     background-color: #f4f4f4;
-    overflow-x: hidden;
+    overflow: hidden;
+    white-space: nowrap;
 }
 .button-start-container {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     gap: 15px;
 }
 
@@ -59,6 +67,11 @@
 
 .button-start:hover {
      background: rgba(255, 255, 255, 0.4);
+}
+
+.button-start:active {
+    width: 125px;
+    font-size: 15px;
 }
 
 .quit:hover {
@@ -89,6 +102,9 @@
 }
 
 .button-game {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex: 1;
     background-color: #222;
     border: none;
@@ -96,9 +112,20 @@
     color: white;
     font-size: 2rem;
     text-transform: uppercase;
+    text-decoration: none;
     cursor: pointer;
     position: relative;
     transition: background-color 0.3s ease;
+}
+
+#go-back-button {
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+#go-back-button:hover {
+    color: red;
+    cursor: pointer;
 }
 
 .button-game:hover {
@@ -106,7 +133,7 @@
 }
 
 @media (max-width: 426px) {
-    #buttons-game {
+    #button-game-container {
         flex-direction: column;
         gap: 12px;
     }
@@ -114,6 +141,331 @@
 
 /* Rest (random photo) Page*/
 
+#rest-body {
+    background-color: #dddbdb;
+}
+
+#rest-card {
+    max-width: 600px;
+    padding: 16px;
+    background-color: white;
+    margin: 15px;
+    box-shadow: 15px 5px 5px 5px gray;
+}
+
+#randphoto {
+    width: 100%;
+    height: 100%;
+}
+
 #rest-button {
     margin-top: 10px;
+    padding: 10px;
+    width: 150px;
+    font-size: 18px;
+    border: 1px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+    background: rgba(255, 255, 255, 0.2);
+    text-decoration: none;
+    color: black;
+}
+
+#rest-button:hover {
+    background-color: #9a9a9a;
+}
+
+#rest-button:active {
+    width: 125px;
+    font-size: 15px;
+}
+
+#rest-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* You won Page*/
+
+#won-game-body {
+    background: linear-gradient(135deg, #ffcc00, #ff6699);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    padding-top: 10vh;
+    overflow: hidden;
+}
+
+#won-game-header-text {
+    font-size: 70px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.9);
+    animation: glow 1.5s infinite alternate;
+}
+
+#won-game-hr {
+    width: 60%;
+    border: none;
+    height: 3px;
+    background: white;
+    margin: 20px 0;
+}
+
+#won-game-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+}
+
+#won-game-button {
+    display: inline-block;
+    padding: 15px 50px;
+    background: linear-gradient(45deg, #ffcc00, #ff9966);
+    border-radius: 30px;
+    font-size: 22px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+#won-game-button:hover {
+    background: linear-gradient(45deg, #ffd700, #ff6347);
+    box-shadow: 0 0 20px #ffd700, 0 0 30px #ff4500;
+    transform: scale(1.1);
+}
+
+#won-game-button::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.6), transparent);
+    top: -50%;
+    left: -50%;
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.5s;
+}
+
+#won-game-button:hover::before {
+    opacity: 1;
+    transform: scale(1.5);
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.9);
+    }
+    to {
+        text-shadow: 0px 0px 35px rgba(255, 255, 255, 1);
+    }
+}
+
+
+
+/* You lost Page*/
+
+#lost-game-body {
+    background: linear-gradient(135deg, #111, #2b0000);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    padding-top: 10vh;
+    color: #880000;
+    overflow: hidden;
+}
+
+#lost-game-header-text {
+    font-size: 70px;
+    font-weight: bold;
+    color: #550000;
+    text-shadow: 0px 0px 15px rgba(100, 0, 0, 0.8);
+    animation: flicker 2s infinite alternate;
+}
+
+#lost-game-hr {
+    width: 60%;
+    border: none;
+    height: 3px;
+    background: #550000;
+    margin: 20px 0;
+}
+
+#lost-game-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+}
+
+#lost-game-button {
+    display: inline-block;
+    padding: 15px 50px;
+    background: linear-gradient(45deg, #660000, #330000);
+    border-radius: 30px;
+    font-size: 22px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s ease-in-out;
+}
+
+#lost-game-button::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 0, 0, 0.6), transparent);
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+}
+
+#lost-game-button::after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    width: 8px;
+    height: 15px;
+    background: red;
+    border-radius: 50%;
+    opacity: 0;
+    transform: translateX(-50%);
+    animation: drip 3s infinite linear;
+}
+
+#lost-game-button:hover {
+    background: linear-gradient(45deg, #880000, #440000);
+    box-shadow: 0 0 25px #ff0000;
+    transform: scale(1.1);
+}
+
+#lost-game-button:hover::after {
+    opacity: 1;
+    animation: drip-fast 1.5s infinite linear;
+}
+
+@keyframes flicker {
+    from { text-shadow: 0px 0px 15px rgba(100, 0, 0, 0.8); }
+    to { text-shadow: 0px 0px 30px rgba(150, 0, 0, 1); }
+}
+
+@keyframes drip {
+    0% { transform: translateX(-50%) translateY(0); opacity: 1; }
+    50% { transform: translateX(-50%) translateY(10px); opacity: 0.8; }
+    100% { transform: translateX(-50%) translateY(20px); opacity: 0; }
+}
+
+@keyframes drip-fast {
+    0% { transform: translateX(-50%) translateY(0); opacity: 1; }
+    50% { transform: translateX(-50%) translateY(15px); opacity: 0.8; }
+    100% { transform: translateX(-50%) translateY(30px); opacity: 0; }
+}
+
+
+/* It`s a tie Page*/
+
+#tie-game-body {
+    background: linear-gradient(135deg, #444, #222);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    padding-top: 10vh;
+    color: #aaa;
+    overflow: hidden;
+}
+
+#tie-game-header-text {
+    font-size: 70px;
+    font-weight: bold;
+    color: #777;
+    text-shadow: 0px 0px 10px rgba(100, 100, 100, 0.5);
+    text-transform: uppercase;
+    animation: subtle-glow 3s infinite alternate;
+}
+
+#tie-game-hr {
+    width: 60%;
+    border: none;
+    height: 3px;
+    background: #555;
+    margin: 20px 0;
+}
+
+#tie-game-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+}
+
+#tie-game-button {
+    display: inline-block;
+    padding: 15px 50px;
+    background: linear-gradient(45deg, #666, #444);
+    border-radius: 10px;
+    font-size: 22px;
+    color: #bbb;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    transition: 0.3s ease-in-out;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+#tie-game-button::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(200, 200, 200, 0.1), transparent);
+    top: 0;
+    left: 0;
+    opacity: 0.3;
+    transition: opacity 0.3s;
+}
+
+#tie-game-button:hover {
+    background: linear-gradient(45deg, #777, #333);
+    box-shadow: 0 0 15px #555, inset 0 0 10px rgba(0, 0, 0, 0.9);
+    transform: scale(1.05);
+}
+
+#tie-game-button:hover::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, transparent, #552200, transparent);
+    bottom: 0;
+    left: 0;
+    opacity: 0.7;
+}
+
+@keyframes subtle-glow {
+    from { text-shadow: 0px 0px 10px rgba(100, 100, 100, 0.5); }
+    to { text-shadow: 0px 0px 20px rgba(150, 150, 150, 0.7); }
 }

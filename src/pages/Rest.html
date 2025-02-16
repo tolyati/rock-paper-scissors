@@ -6,9 +6,14 @@
     <title>Now rest a bit</title>
     <link rel="stylesheet" href="../styles/style.css">
 </head>
-<body>
-    <img src="" alt="Random photo" id="randphoto" style="display: none;">
-    <button id="rest-button" type="button" onclick="fetchData()">A picture</button>
+<body id="rest-body">
+    <main id="rest-main">
+        <div id="rest-card">
+            <img src="" alt="Random photo" id="randphoto" style="display: none;">
+        </div>
+        <a id="rest-button" type="button">New picture</a>  
+        <a onclick="javascript:history.back();" id="rest-button" type="button">Back</a>    
+    </main>
     <script src="../scripts/RestPage.js"></script>
 </body>
 </html>
